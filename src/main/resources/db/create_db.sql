@@ -8,9 +8,19 @@ CREATE TABLE users (
   password VARCHAR(50) NOT NULL ,
   beerkind VARCHAR(50) NOT NULL ,
   gender CHAR(1) NOT NULL ,
-  interests TEXT NOT NULL
+  interests TEXT NOT NULL,
 );
 
+DROP TABLE IF EXISTS user_roles;
+
+CREATE TABLE user_roles (
+  user_role_id int(11) NOT NULL AUTO_INCREMENT,
+  username varchar(45) NOT NULL,
+  role varchar(45) NOT NULL,
+  PRIMARY KEY (user_role_id),
+  UNIQUE KEY uni_username_role (role,username),
+  KEY fk_username_idx (username),
+  CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username));
 
 DROP TABLE IF EXISTS ingredients;
 

@@ -1,6 +1,7 @@
 package Model;
 
-import java.util.Arrays;
+import util.ModelUtil;
+
 import java.util.List;
 
 public class User {
@@ -13,6 +14,7 @@ public class User {
     private List<String> complicatedInterests;
     private String confirmPassword;
     private String interests;
+    private String userRole;
 
     public String getConfirmPassword() {
         return confirmPassword;
@@ -83,35 +85,15 @@ public class User {
     }
 
     public List<String> getComplicatedInterests() {
-        return computeInterests(this.interests);
+        return ModelUtil.computeInterests(this.interests);
     }
 
     public void setComplicatedInterests(List<String> interests) {
         this.complicatedInterests = interests;
-        this.interests = delimitInterests(interests);
+        this.interests = ModelUtil.delimitInterests(interests);
     }
 
-    private List<String> computeInterests(String st) {
-        List<String> items = Arrays.asList(st.split("\\s*,\\s*"));
-        return items;
-    }
 
-    private String delimitInterests(List<String> list) {
-        StringBuilder stBuilder = new StringBuilder();
-
-        for(String st : list){
-            stBuilder.append(st);
-            stBuilder.append(",");
-        }
-
-        String output = stBuilder.toString();
-
-        //Remove last comma
-        output = output.substring(0, output.length() - 1);
-
-        //System.out.println(csv);
-        return output;
-    }
 
     public String getInterests() {
         return this.interests;
@@ -119,7 +101,15 @@ public class User {
 
     public void setInterests(String interests) {
         this.interests = interests;
-        this.complicatedInterests = computeInterests(interests);
+        this.complicatedInterests = ModelUtil.computeInterests(interests);
+    }
+
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
+    }
+
+    public String getUserRole() {
+        return userRole;
     }
 
     public boolean isNew() {

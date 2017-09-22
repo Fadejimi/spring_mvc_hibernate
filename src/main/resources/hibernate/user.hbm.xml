@@ -23,6 +23,9 @@
         <property name="gender" type="string">
             <column name="gender" length="1" not-null="true" />
         </property>
+        <!--<property name="userRole" type="string">
+            <column name="userRole" length="50" not-null="true" />
+        </property>-->
         <property name="interests" type="string">
             <column name="interests" not-null="true" />
         </property>
