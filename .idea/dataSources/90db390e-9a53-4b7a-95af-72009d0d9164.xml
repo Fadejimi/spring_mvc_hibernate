@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="brewery@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="brewery">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="blog"/>
+    <schema id="4" parent="1" name="cana"/>
+    <schema id="5" parent="1" name="com_db_new"/>
+    <schema id="6" parent="1" name="digitees_digits"/>
+    <schema id="7" parent="1" name="efiwe_book"/>
+    <schema id="8" parent="1" name="ehr2"/>
+    <schema id="9" parent="1" name="elise"/>
+    <schema id="10" parent="1" name="Hello"/>
+    <schema id="11" parent="1" name="information_schema"/>
+    <schema id="12" parent="1" name="job"/>
+    <schema id="13" parent="1" name="joomla_db"/>
+    <schema id="14" parent="1" name="learning"/>
+    <schema id="15" parent="1" name="mysql"/>
+    <schema id="16" parent="1" name="new_ehrr"/>
+    <schema id="17" parent="1" name="performance_schema"/>
+    <schema id="18" parent="1" name="read_it_later"/>
+    <schema id="19" parent="1" name="record_keeping"/>
+    <schema id="20" parent="1" name="schplus3_school_ranking"/>
+    <schema id="21" parent="1" name="sj_template"/>
+    <schema id="22" parent="1" name="smartm23_medical"/>
+    <schema id="23" parent="1" name="smartmed_medical_db"/>
+    <schema id="24" parent="1" name="tractor_power"/>
+  </database-model>
+</dataSource>
