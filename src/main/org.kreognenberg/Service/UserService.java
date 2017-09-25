@@ -9,6 +9,6 @@ public interface UserService {
     User logUser(String username, String password);
     List<User> findAll();
     User findOne(Integer id);
-    void saveOrUpdateUser(User user);
+    User saveOrUpdateUser(User user);
     void delete(Integer id);
 }

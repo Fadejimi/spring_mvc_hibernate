@@ -8,10 +8,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <!-- User business object
-    <bean id="userBo" class="bo.UserBoImpl" >
+    <bean id="myUserDetailsService" class="Service.MyUserDetailsService">
         <property name="userDao" ref="userDao" />
-    </bean>-->
+    </bean>
 
 
 </beans>

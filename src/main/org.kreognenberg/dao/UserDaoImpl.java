@@ -107,6 +107,22 @@ public class UserDaoImpl implements UserDao {
         namedParameterJdbcTemplate.update(sql, params);
     }
 
+    public User register(String username) {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("username", username);
+
+        String sql = "SELECT * FROM users WHERE username = :username limit 1";
+
+        List<User> userList = namedParameterJdbcTemplate.query(sql, params, new UserMapper());
+        if (userList.size() == 0)
+        {
+            return null;
+        }
+        else {
+            return userList.get(0);
+        }
+    }
+
 
     private static final class UserMapper implements RowMapper<User> {
 

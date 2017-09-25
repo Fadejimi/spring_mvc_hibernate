@@ -3,7 +3,7 @@ package Model;
 import java.util.List;
 
 public class Ingredient {
-    private int id;
+    private Integer id;
 
     private String name;
     private String category;
@@ -61,5 +61,12 @@ public class Ingredient {
 
     public void setPricePerKilo(int pricePerKilo) {
         this.pricePerKilo = pricePerKilo;
+    }
+
+    public boolean isNew() {
+        if (id == null) {
+            return true;
+        }
+        return false;
     }
 }

@@ -7,13 +7,14 @@ import java.util.List;
 public interface IngredientDao {
     Ingredient findById(Integer id);
 
-    void save(Ingredient ingredient);
+    Ingredient save(Ingredient ingredient);
 
-    void update(Ingredient ingredient);
+    Ingredient update(Ingredient ingredient);
 
     void delete(Integer id);
 
     List<Ingredient> findAll();
 
+    void incPriceOfIngredient(String category);
 
 }

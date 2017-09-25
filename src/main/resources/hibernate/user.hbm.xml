@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <property name="username" type="string">
-            <column name="username" length="100" not-null="true"  />
+            <column name="username" length="100" not-null="true" unique="true"  />
         </property>
         <property name="email" type="string">
             <column name="email" length="50" not-null="true"  />
@@ -23,11 +23,15 @@
         <property name="gender" type="string">
             <column name="gender" length="1" not-null="true" />
         </property>
-        <!--<property name="userRole" type="string">
-            <column name="userRole" length="50" not-null="true" />
-        </property>-->
         <property name="interests" type="string">
             <column name="interests" not-null="true" />
         </property>
+        <set name="userRole" table="user_role"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="username" not-null="true" />
+            </key>
+            <one-to-many class="Model.UserRole" />
+        </set>
     </class>
 </hibernate-mapping>

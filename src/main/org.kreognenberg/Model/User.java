@@ -2,7 +2,9 @@ package Model;
 
 import util.ModelUtil;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class User {
     private Integer id;
@@ -14,7 +16,15 @@ public class User {
     private List<String> complicatedInterests;
     private String confirmPassword;
     private String interests;
-    private String userRole;
+    private Set<UserRole> userRole = new HashSet<UserRole>(0);
+
+    public Set<UserRole> getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(Set<UserRole> userRoles) {
+        this.userRole = userRoles;
+    }
 
     public String getConfirmPassword() {
         return confirmPassword;
@@ -104,13 +114,6 @@ public class User {
         this.complicatedInterests = ModelUtil.computeInterests(interests);
     }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
-    }
-
-    public String getUserRole() {
-        return userRole;
-    }
 
     public boolean isNew() {
         if (this.id == null) {

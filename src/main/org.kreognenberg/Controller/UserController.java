@@ -33,7 +33,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("users", userService.findAll());
         return "/users/index";
@@ -84,9 +84,9 @@ public class UserController {
                 redirectAttributes.addFlashAttribute("msg", "User has been successfully updated");
             }
 
-            userService.saveOrUpdateUser(user);
+            User user1= userService.saveOrUpdateUser(user);
 
-            return "redirect:/users/"+user.getId();
+            return "redirect:/users/"+user1.getId();
         }
     }
 

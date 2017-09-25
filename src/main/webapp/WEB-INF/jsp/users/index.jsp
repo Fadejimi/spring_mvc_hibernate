@@ -12,7 +12,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 
-    <title>Title</title>
     <%@ include file="../fragments/header.jspf" %>
 
 <body>

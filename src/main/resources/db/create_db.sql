@@ -3,24 +3,25 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id   INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(100) NOT NULL,
+  username VARCHAR(100) NOT NULL UNIQUE,
   email  VARCHAR(50) NOT NULL ,
   password VARCHAR(50) NOT NULL ,
   beerkind VARCHAR(50) NOT NULL ,
   gender CHAR(1) NOT NULL ,
-  interests TEXT NOT NULL,
+  interests TEXT NOT NULL
 );
 
 DROP TABLE IF EXISTS user_roles;
 
 CREATE TABLE user_roles (
-  user_role_id int(11) NOT NULL AUTO_INCREMENT,
-  username varchar(45) NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
+  username varchar(100) NOT NULL,
   role varchar(45) NOT NULL,
-  PRIMARY KEY (user_role_id),
+  PRIMARY KEY (id),
   UNIQUE KEY uni_username_role (role,username),
-  KEY fk_username_idx (username),
-  CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username));
+  FOREIGN KEY (username) REFERENCES users (username)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE);
 
 DROP TABLE IF EXISTS ingredients;
 

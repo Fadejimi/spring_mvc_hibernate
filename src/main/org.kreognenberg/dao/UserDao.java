@@ -14,4 +14,6 @@ public interface UserDao {
     void delete(Integer id);
 
     List<User> findAll();
+
+    User register(String username);
 }
